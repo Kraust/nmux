@@ -7,8 +7,8 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/tweekmonster/nmux"
-	"github.com/tweekmonster/nmux/gui"
+	"github.com/kraust/nmux"
+	"github.com/kraust/nmux/gui"
 )
 
 func main() {

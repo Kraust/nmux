@@ -23,7 +23,7 @@ Windows and Linux builds will be available in the future.
 You can also install it with Go:
 
 ```
-$ go get -u github.com/tweekmonster/nmux/cmd/nmux
+$ go get -u github.com/kraust/nmux/cmd/nmux
 ```
 
 ## Usage
@@ -81,5 +81,5 @@ workspaces and resume where you left off after a reboot.
 
 
 [Neovim]: https://github.com/neovim/neovim
-[unstable]: https://github.com/tweekmonster/nmux/releases/tag/unstable
+[unstable]: https://github.com/kraust/nmux/releases/tag/unstable
 [libvterm]: https://github.com/neovim/libvterm
