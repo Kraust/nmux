@@ -14,6 +14,7 @@ import (
 func main() {
 	server := flag.Bool("server", false, "Run as server")
 	addr := flag.String("addr", ":9999", "addr:port to listen on")
+	dir := flag.String("dir", "/tmp", "Starting nvim working directory")
 
 	flag.Parse()
 
@@ -27,7 +28,12 @@ func main() {
 		return
 	}
 
-	listener, err := nmux.WebServer(*addr)
+	if dir == nil {
+		flag.PrintDefaults()
+		return
+	}
+
+	listener, err := nmux.WebServer(*addr, *dir)
 	if err != nil {
 		log.Println("Error:", err)
 	}
