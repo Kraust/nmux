@@ -47,12 +47,12 @@ func (ln tcpKeepAliveListener) Accept() (c net.Conn, err error) {
 	return tc, nil
 }
 
-func websocketHandler(ws *websocket.Conn) {
+func websocketHandler(ws *websocket.Conn, dir string) {
 	util.Print("Connection from:", ws.RemoteAddr())
 
 	if proc == nil || !proc.IsRunning() {
 		util.Debug("Starting nvim process")
-		p, err := NewProcess("/tmp", 80, 20)
+		p, err := NewProcess(dir, 80, 20)
 		if err != nil {
 			util.Print("Couldn't start process:", err)
 			return
@@ -153,7 +153,7 @@ mainloop:
 	util.Print("Connection stopped:", ws.RemoteAddr())
 }
 
-func WebServer(addr string) (io.Closer, error) {
+func WebServer(addr string, dir string) (io.Closer, error) {
 	http.HandleFunc("/nmux", func(w http.ResponseWriter, r *http.Request) {
 		ws, err := upgrader.Upgrade(w, r, nil)
 		if err != nil {
@@ -161,7 +161,7 @@ func WebServer(addr string) (io.Closer, error) {
 			return
 		}
 
-		websocketHandler(ws)
+		websocketHandler(ws, dir)
 	})
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
