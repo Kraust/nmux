@@ -199,6 +199,23 @@ func (s *Screen) redrawOp(op string, args *opArgs) {
 			s.Mode = ModeReplace
 		}
 
+	case "mode_info_set":
+		//log.Printf("mode_info_set: %#v", args.args)
+		log.Printf("TODO: mode_info_set")
+		// TODO
+
+	case "option_set":
+		// TODO: ???
+
+	case "default_colors_set":
+		s.DefaultAttrs.Fg = Color(args.Int())
+		s.DefaultAttrs.Bg = Color(args.Int())
+		s.DefaultAttrs.Sp = Color(args.Int())
+		// TODO: cterm_bg and cterm_fg?
+
+	case "flush":
+		// TODO ???
+
 	case "popupmenu_show":
 		// TODO
 

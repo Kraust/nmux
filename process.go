@@ -9,7 +9,7 @@ import (
 	"sync"
 
 	"github.com/neovim/go-client/nvim"
-	"github.com/tweekmonster/nmux/screen"
+	"github.com/kraust/nmux/screen"
 )
 
 const (

@@ -9,8 +9,8 @@ import (
 	"time"
 
 	"github.com/gorilla/websocket"
-	"github.com/tweekmonster/nmux/screen"
-	"github.com/tweekmonster/nmux/util"
+	"github.com/kraust/nmux/screen"
+	"github.com/kraust/nmux/util"
 )
 
 type tcpKeepAliveListener struct {
