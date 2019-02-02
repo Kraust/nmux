@@ -302,7 +302,7 @@ var Screen = function() {
     ctx.translate(0, charOffsetY - 2);
     ctx.fillStyle = fg;
     setFont(ctx, a);
-    ctx.fillText(c, 0, 0);
+    ctx.fillText(c, 0, (charH * 0.125));
 
     ctx.restore();
   }
