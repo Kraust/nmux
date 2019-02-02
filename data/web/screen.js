@@ -368,7 +368,7 @@ var Screen = function() {
     for (var i = 0; i < l; i++) {
       c = chars[i];
       if (c != ' ') {
-        scr.ctx.fillText(c, i * charW, 0);
+        scr.ctx.fillText(c, i * charW, (charH * 0.125));
       }
     }
 

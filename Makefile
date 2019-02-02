@@ -55,7 +55,7 @@ bindata.go: $(BINDATA)
 screen/const_string.go: screen/const.go
 	stringer -type=Op,Attr,Mode -output screen/const_string.go screen/
 
-$(eval $(call build_target,$(DIST)/darwin-10.8/amd64/nmux.app/Contents/MacOS/nmux,darwin-10.8,amd64,tar.bz2))
-# $(eval $(call build_target,$(DIST)/linux/amd64/nmux,linux,amd64,tar.bz2))
+#$(eval $(call build_target,$(DIST)/darwin-10.8/amd64/nmux.app/Contents/MacOS/nmux,darwin-10.8,amd64,tar.bz2))
+$(eval $(call build_target,$(DIST)/linux/amd64/nmux,linux,amd64,tar.bz2))
 # $(eval $(call build_target,$(DIST)/windows/amd64/nmux.exe,windows,amd64,zip))
 # $(eval $(call build_target,$(DIST)/windows/386/nmux.exe,windows,386,zip))
