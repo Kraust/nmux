@@ -24,6 +24,9 @@ func (s *Screen) redrawOp(op string, args *opArgs) {
 
 		s.writeClear()
 
+	case "flush":
+		s.flushScreen(false)
+
 	case "eol_clear":
 		s.clearLine(s.Cursor.X, s.Cursor.Y)
 
@@ -205,6 +208,8 @@ func (s *Screen) redrawOp(op string, args *opArgs) {
 	case "popupmenu_select":
 
 	case "popupmenu_hide":
+
+	case "win_viewport":
 
 	default:
 		log.Printf("Unknown redraw op: %s, %#v", op, args.args)

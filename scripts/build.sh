@@ -36,9 +36,13 @@ mkdir -p --mode=2755 "$XGO_TMP"
 
 FINAL_BIN="${BIN_PATH}/${BIN_NAME}"
 echo "Building: $FINAL_BIN"
-xgo -go "$GO_VERSION" --targets="$TARGET" -dest="$XGO_TMP" ./cmd/nmux >/dev/null || exit 1
+# xgo -go "$GO_VERSION" --targets="$TARGET" -dest="$XGO_TMP" ./cmd/nmux >/dev/null || exit 1
+( 
+    cd cmd/nmux
+    go build
+)
 
-cp "${XGO_TMP}/"* "$FINAL_BIN"
+cp cmd/nmux/nmux "$FINAL_BIN"
 
 for src in "${!COPY[@]}"; do
   dest="${COPY[$src]}"

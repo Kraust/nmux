@@ -53,7 +53,7 @@ bindata.go: $(BINDATA)
 	go-bindata ${BIN_DATA_ARGS} -pkg=nmux -prefix data/ data/...
 
 screen/const_string.go: screen/const.go
-	stringer -type=Op,Attr,Mode -output screen/const_string.go screen/
+	stringer -type=Op,Attr,Mode -output screen/const_string.go screen/*
 
 $(eval $(call build_target,$(DIST)/darwin-10.8/amd64/nmux.app/Contents/MacOS/nmux,darwin-10.8,amd64,tar.bz2))
 # $(eval $(call build_target,$(DIST)/linux/amd64/nmux,linux,amd64,tar.bz2))
